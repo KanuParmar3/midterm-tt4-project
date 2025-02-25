@@ -1,75 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-</head>
-<body>
 
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Add New Product</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+		/>
+	</head>
+	<body>
+		<div class="d-flex" id="wrapper">
+			<!-- Sidebar-->
+			<div class="border-end bg-white" id="sidebar-wrapper">
+				<div class="sidebar-heading border-bottom bg-light">
+					Start Bootstrap
+				</div>
+				<div class="list-group list-group-flush">
+					<a
+						class="list-group-item list-group-item-action list-group-item-light p-3"
+						href="index.html"
+						>Home</a
+					>
+					<a
+						class="list-group-item list-group-item-action list-group-item-light p-3"
+						href="list-product.html"
+						>List</a
+					>
+					<a
+						class="list-group-item list-group-item-action list-group-item-light p-3"
+						href="add-products.html"
+						>Add Product</a
+					>
+				</div>
+			</div>
 
-    <div class="d-flex">
+			<!-- Page content wrapper-->
+			<div id="page-content-wrapper">
+				<!-- Top navigation-->
+				<nav
+					class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+				>
+					<div class="container-fluid">
+						<button class="btn btn-primary" id="sidebarToggle">
+							Toggle Menu
+						</button>
+						<button
+							class="navbar-toggler"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#navbarSupportedContent"
+							aria-controls="navbarSupportedContent"
+							aria-expanded="false"
+							aria-label="Toggle navigation"
+						>
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+								<li class="nav-item active">
+									<a class="nav-link" href="index.html">Home</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="list-product.html">Product List</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#!">Messages</a>
+								</li>
+								<li class="nav-item dropdown">
+									<a
+										class="nav-link dropdown-toggle"
+										id="navbarDropdown"
+										href="#"
+										role="button"
+										data-bs-toggle="dropdown"
+										aria-haspopup="true"
+										aria-expanded="false"
+									>
+										Your Name
+									</a>
+									<div
+										class="dropdown-menu dropdown-menu-end"
+										aria-labelledby="navbarDropdown"
+									>
+										<a class="dropdown-item" href="#!">Action</a>
+										<a class="dropdown-item" href="#!">Another action</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#!">Something else here</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
 
-        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-            <div class="position-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">
-                            Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.html">
-                            Products
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="add-products.html">
-                            Add Product
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+				<!-- Page content-->
+				<div id="content" class="container-fluid p-5">
+					<h1 class="mt-4">Add New Product</h1>
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
-            <h2 class="my-4">Add New Product</h2>
+					<form>
+						<!-- Photo -->
+						<div class="mb-3">
+							<label for="photo" class="form-label">Product Photo</label>
+							<input
+								type="file"
+								class="form-control"
+								id="photo"
+								accept="image/*"
+							/>
+						</div>
 
-            <form action="#" method="post" class="p-4 border rounded bg-light shadow-sm">
-                <div class="mb-3">
-                    <label for="product-photo" class="form-label">Product Photo</label>
-                    <input type="file" class="form-control" id="product-photo" name="product-photo" accept="image/*">
-                </div>
+						<!-- Title -->
+						<div class="mb-3">
+							<label for="title" class="form-label">Product Title</label>
+							<input
+								type="text"
+								class="form-control"
+								id="title"
+								placeholder="Enter product title"
+							/>
+						</div>
 
-                <div class="mb-3">
-                    <label for="product-title" class="form-label">Product Title</label>
-                    <input type="text" class="form-control" id="product-title" name="product-title" required>
-                </div>
+						<!-- Description -->
+						<div class="mb-3">
+							<label for="description" class="form-label"
+								>Description (Max 100 characters)</label
+							>
+							<textarea
+								class="form-control"
+								id="description"
+								rows="3"
+								maxlength="100"
+								placeholder="Enter product description"
+							></textarea>
+						</div>
 
-                <div class="mb-3">
-                    <label for="product-description" class="form-label">Product Description</label>
-                    <textarea class="form-control" id="product-description" name="product-description" maxlength="100" rows="3" required></textarea>
-                    <div class="form-text">Description is limited to 100 characters.</div>
-                </div>
+						<!-- Price -->
+						<div class="mb-3">
+							<label for="price" class="form-label">Price</label>
+							<input
+								type="number"
+								class="form-control"
+								id="price"
+								placeholder="Enter product price"
+							/>
+						</div>
 
-                <div class="mb-3">
-                    <label for="product-price" class="form-label">Product Price</label>
-                    <input type="number" class="form-control" id="product-price" name="product-price" step="0.01" min="0" required>
-                </div>
+						<!-- Quantity -->
+						<div class="mb-3">
+							<label for="quantity" class="form-label">Quantity</label>
+							<input
+								type="number"
+								class="form-control"
+								id="quantity"
+								placeholder="Enter product quantity"
+							/>
+						</div>
 
-                <div class="mb-3">
-                    <label for="product-quantity" class="form-label">Product Quantity</label>
-                    <input type="number" class="form-control" id="product-quantity" name="product-quantity" min="1" required>
-                </div>
+						<button type="submit" class="btn btn-primary">Add Product</button>
+					</form>
+				</div>
+			</div>
+		</div>
 
-                <button type="submit" class="btn btn-primary">Add Product</button>
-            </form>
-        </main>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
 </html>

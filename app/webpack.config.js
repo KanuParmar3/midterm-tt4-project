@@ -69,11 +69,11 @@ module.exports = {
 			chunks: ["listProduct", "global"],
 			filename: "list-product.html", // Generate the list-product.html file
 		}),
-		// new HtmlWebpackPlugin({
-		//   template: "./add-products.html",
-		//   chunks: ["addProducts", "global"],
-		//   filename: "add-products.html", // Add products page (optional)
-		// }),
+		new HtmlWebpackPlugin({
+			template: "./add-products.html",
+			chunks: ["addProducts", "global"],
+			filename: "add-products.html", // Add products page (optional)
+		}),
 	],
 	optimization: {
 		minimize: true,
