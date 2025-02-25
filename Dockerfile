@@ -40,3 +40,11 @@ RUN echo "API_PORT=3000" >> /app/.env
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+
+FROM nginx
+ 
+COPY /dist /usr/share/nginx/html
+ 
+EXPOSE 80
+
+CMD [ "nginx","-g","daemon off;" ]
